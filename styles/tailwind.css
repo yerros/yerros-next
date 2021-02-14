@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  font-family: "Nunito", sans-serif;
+}
+#box {
+  width: 700px;
+  height: 300px;
+}
+#text-neon {
+  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+    0 0 80px #00b3ff, 0 0 120px #00b3ff;
+}
+.text-neon {
+  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+    0 0 80px #00b3ff, 0 0 120px #00b3ff;
+}
+.text-neon :hover {
+  text-shadow: 0 0 10px #ff0800, 0 0 20px #ff0800, 0 0 40px #ff0800,
+    0 0 80px #ff0800, 0 0 120px #ff0800;
+}
+#box-neon {
+  box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+    0 0 80px #00b3ff, 0 0 120px #00b3ff;
+  animation: animateBar 5s linear infinite;
+}
+@keyframes animateBar {
+  0%,
+  5% {
+    transform: scaleY(0) translateX(0);
+  }
+  10% {
+    transform: scaleY(1) translateX(0);
+  }
+  90% {
+    transform: scaleY(1) translateX(calc(700px - 10px));
+  }
+  95%,
+  100% {
+    transform: scaleY(0) translateX(calc(700px - 10px));
+  }
+}
+#running {
+  animation: animateRun 10s linear infinite;
+}
+@keyframes animateRun {
+  0%,
+  2.5% {
+    transform: translateX(0);
+  }
+  5% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(100%);
+  }
+  47.5%,
+  50% {
+    transform: translateX(100%);
+  }
+  50.001%,
+  52.5% {
+    transform: translateX(-100%);
+  }
+  55% {
+    transform: translateX(-100%);
+  }
+  95% {
+    transform: translateX(0%);
+  }
+  97.5%,
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@media (max-width: 768px) {
+  #box {
+    height: 200px;
+  }
+  @keyframes animateBar {
+    0%,
+    5% {
+      transform: scaleY(0) translateX(0);
+    }
+    10% {
+      transform: scaleY(1) translateX(0);
+    }
+    90% {
+      transform: scaleY(1) translateX(calc(500px - 10px));
+    }
+    95%,
+    100% {
+      transform: scaleY(0) translateX(calc(500px - 10px));
+    }
+  }
+}
